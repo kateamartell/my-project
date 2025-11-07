@@ -1,7 +1,33 @@
-<h2>Register</h2>
-{{#if error}}<p style="color:red">{{error}}</p>{{if}}
-<form method="POST" action="/register">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Register</button>
-</form>
+<div class="container">
+    <div class="main-content">
+        <div class="card form-container">
+            <h1 class="text-center mb-2">Register</h1>
+
+            <form method="POST" action="/register">
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-input" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Register
+                </button>
+            </form>
+
+            <div class="text-center mt-2">
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+
+            {{#if error}}
+                <div class="alert alert-error mt-2">
+                    {{error}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
