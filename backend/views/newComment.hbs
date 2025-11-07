@@ -1,5 +1,19 @@
-<h2>New Comment</h2>
-<form method="POST" action="/comment">
-    <textarea name="text" required></textarea>
-    <button type="submit">Post Comment</button>
-</form>
+<div class="container">
+    <div class="main-content">
+        <div class="card">
+            <h1 class="text-center mb-2">New Comment</h1>
+            
+            <form method="POST" action="/comment">
+                <div class="form-group">
+                    <label class="form-label">Comment</label>
+                    <textarea class="form-textarea" name="text" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <a href="/comments" class="btn btn-outline">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
