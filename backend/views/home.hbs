@@ -1,7 +1,33 @@
-<h1>Welcome to the Inscure Forum</h1>
-{{#if user}}
-    <p>You are logged in as {{user.username}}</p>
-    <a href="/comment/new">Add a Comment</a>
-{{else}}
-    <p>Please <a href="/login">Login</a> or <a href="/register">Register</a>.</p>
-{{/if}}
+<div class="container">
+    <div class="main-content">
+        <div class="hero">
+            <h1>Welcome to InsecureForum</h1>
+            <p>Join the conversation and share your thoughts.
+            </p>
+            <div class="cta-buttons">
+                <a href="/comments" class="btn btn-primary">View Comments</a>
+            </div>
+        </div>
+
+        {{#if user.isLoggedIn}}
+            <div class="card text-center">
+                <h2>Welcome, {{user.name}}</h2>
+                <p>Login Time: {{user.loginTime}}</p>
+                <p>Visit Count: {{user.visitCount}}</p>
+                <div class="cta-buttons">
+                    <a href="/comment/new" class="btn btn-primary">New Comment</a>
+                    <a href="/comments" class="btn btn-outline">View Comments</a>
+                </div>
+            </div>
+        {{else}}
+            <div class="card text-center">
+                <h2>Get Started</h2>
+                <p>Register or login to post comments</p>
+                <div class="cta-buttons">
+                    <a href="/register" class="btn btn-primary">Register</a>
+                    <a href="/login" class="btn btn-outline">Login</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>
